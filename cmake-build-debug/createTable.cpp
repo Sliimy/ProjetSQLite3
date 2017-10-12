@@ -13,20 +13,36 @@ void phase1(sqlite3 *db) {
     createNewTable( nameTable,NBR_INPUT,db);
     int nbrLineDB = 1;
     nbrLineDB = nbrLineDB << NBR_INPUT;
-    printf("nbrLine : %d\n", nbrLineDB);
     int i;
     int tabBinary[NBR_INPUT];
-    int data[NBR_INPUT + 1];
     for (i = 0; i < nbrLineDB; i++) {
         intToTableBinary(i, tabBinary, NBR_INPUT);
-        data[0] = i;
-        printf("tabBinary :%d  %d  %d \n", tabBinary[0], tabBinary[1], tabBinary[2]);
-        printf("Predata :%d  %d  %d %d \n", data[0], data[1], data[2], data[3]);
-
-        int j;
-        memcpy(&data[1], tabBinary, sizeof(tabBinary));
-        printf("data :%d  %d  %d %d \n\n", data[0], data[1], data[2], data[3]);
-
-        setDataDB(nameTable, data, NBR_INPUT + 1, db);
+        setDataDB(nameTable,tabBinary, NBR_INPUT, db);
     }
 }
+
+//void phase2(sqlite3 *db) {
+//
+//    char nameTable[]="table2.x";
+//    int nbrLineDB = 1;
+//    nbrLineDB = nbrLineDB << NBR_INPUT;
+//    int i;
+//    for(i=0;i<nbrLineDB;i++){
+//        sprintf(&nameTable[sizeof(nameTable)-1],"%d",i);
+//        createNewTable( nameTable,NBR_INPUT,db);
+//        int j;
+//        int tabBinary[NBR_INPUT];
+//        int data1[NBR_INPUT + 1];
+//        int data2[NBR_INPUT + 1];
+//        for (j = 0; j < nbrLineDB; j++) {
+//            intToTableBinary(j, tabBinary, NBR_INPUT);
+//            setDataDB(nameTable, tabBinary, NBR_INPUT, db);
+//            int k;
+//            for(k=0; k<nbrLineDB;k++){
+//                intToTableBinary(j, tabBinary, NBR_INPUT);
+//                data2[0] = j;
+//                setDataDB(nameTable,tabBinary, NBR_INPUT, db);
+//            }
+//        }
+//    }hbkj
+//}

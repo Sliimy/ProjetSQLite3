@@ -10,3 +10,4 @@
 #define NBR_INPUT 3
 
 void phase1(sqlite3 *db);
+void phase2(sqlite3 *db);

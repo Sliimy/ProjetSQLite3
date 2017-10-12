@@ -17,8 +17,7 @@ void createNewTable(char nameTable[],int nbrInput,sqlite3 *db){
     char *zErrMsg = 0;
     char* sql;
 
-    string str="CREATE TABLE "+(string) nameTable+"(" \
-                "ID INT NOT NULL,";
+    string str="CREATE TABLE "+(string) nameTable+"(";
     for(i=1;i<=nbrInput;i++){
         string number=to_string(i);
         if(i<nbrInput){
@@ -35,7 +34,7 @@ void createNewTable(char nameTable[],int nbrInput,sqlite3 *db){
     } else {
         fprintf(stdout, "Table created successfully\n");
     }
-    cout << "test2" << str << "\n";
+    //cout << "test2" << str << "\n";
 }
 
 void setDataDB(char nameTable[],int data[],int sizeTabl,sqlite3 *db){
@@ -43,11 +42,11 @@ void setDataDB(char nameTable[],int data[],int sizeTabl,sqlite3 *db){
     char *sql;
     char *zErrMsg = 0;
 
-    string str ="INSERT INTO "+(string) nameTable+"(ID, ";
+    string str ="INSERT INTO "+(string) nameTable+"(";
 
-    for(i=1;i<=sizeTabl-1;i++){
+    for(i=1;i<=sizeTabl;i++){
         string number=to_string(i);
-        if(i<sizeTabl-1){
+        if(i<sizeTabl){
             str=str+"PIN"+number+", ";
         }else{
             str=str+"PIN"+number+") VALUES (";
@@ -63,7 +62,7 @@ void setDataDB(char nameTable[],int data[],int sizeTabl,sqlite3 *db){
             str=str+value+"); ";
         }
     }
-    //cout << "test2" << str << "\n";
+    cout << "test2" << str << "\n";
     sql=&str[0u];
     rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ){
