@@ -1,7 +1,9 @@
 //
 // Created by esisar on 12/10/17.
 //
+#include <stdio.h>
 #include "convert.h"
+
 
 void tableBoolToInt(bool tabBool[], int tabInt[], int size){
     int i;
@@ -21,5 +23,16 @@ void tableIntToBool(int tabInt[],bool tabBool[],int size) {
         } else {
             tabBool[i] = false;
         }
+    }
+}
+
+void intToTableBinary(int value,int tab[],int sizeTable){
+    int i,var,j;
+    var=value;
+    for (i=0;i<sizeTable;i++){
+        j=var&1;
+        tab[i]=(j);
+        var=var>>1;
+
     }
 }
