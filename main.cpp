@@ -31,6 +31,8 @@ int main() {
     printf("Je suis dedans 2\n");
     char nameTable[]="table1";
     createNewTable( nameTable,3,db);
+    int testint[4]={1,2,3,3};
+    setDataDB(nameTable,testint,4,db);
 
 
     sqlite3_close(db);
