@@ -30,12 +30,21 @@ int main() {
 
     char nameTable[]="table1";
     createNewTable( nameTable,NBR_INPUT,db);
-    bool test[NBR_INPUT]={true, false, false};
-    int testint[NBR_INPUT];
-    tableBooltoInt(test,testint,NBR_INPUT);
-    int res[4]={4,0,0,0};
-    memcpy(&res[1],testint,NBR_INPUT);
-    setDataDB(nameTable,res,NBR_INPUT+1,db);
+    bool test[NBR_INPUT];
+    int testint[NBR_INPUT]={1,0,1};
+    //tableBoolToInt(test,testint,NBR_INPUT);
+    //int res[4]={4,0,0,0};
+    //memcpy(&res[1],testint,NBR_INPUT);
+    //setDataDB(nameTable,res,NBR_INPUT+1,db);
+    tableIntToBool(testint,test,3);
+    int i;
+    for(i=0;i<3;i++){
+        if(test[i]){
+            printf("true\n");
+        }else {
+            printf("false\n");
+        }
+    }
 
     sqlite3_close(db);
 

@@ -6,4 +6,5 @@
 #define CSAW_CONVERT_H
 
 #endif //CSAW_CONVERT_H
-void tableBooltoInt(bool tabBool[],int tabInt[],int size);
+void tableBoolToInt(bool tabBool[],int tabInt[],int size);
+void tableIntToBool(int tabInt[],bool tabBool[],int size);
