@@ -20,7 +20,7 @@ void phase1(sqlite3 *db) {
         setDataDB(nameTable,tabBinary, NBR_INPUT, db);
     }
 }
-//TODO: Reprendre cette fonction 
+//TODO: Reprendre cette fonction "
 void phase2(sqlite3 *db) {
 
     char nameTable[]="table2.x";

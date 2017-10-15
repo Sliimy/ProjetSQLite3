@@ -17,7 +17,7 @@ void createNewTable(char nameTable[],int nbrInput,sqlite3 *db){
     char *zErrMsg = 0;
     char* sql;
 
-    string str="CREATE TABLE "+(string) nameTable+"(";
+    string str="CREATE TABLE "+(string) nameTable+"( ID INTEGER PRIMARY KEY AUTOINCREMENT, ";
     for(i=1;i<=nbrInput;i++){
         string number=to_string(i);
         if(i<nbrInput){
