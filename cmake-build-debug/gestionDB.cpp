@@ -62,11 +62,11 @@ void setDataDB(char nameTable[],int data[],int sizeTabl,sqlite3 *db){
             str=str+value+"); ";
         }
     }
-    cout << "test2" << str << "\n";
+    //cout << "test2" << str << "\n";
     sql=&str[0u];
     rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ){
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        //fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     } else {
         //fprintf(stdout, "Insert successfully\n");

@@ -6,7 +6,7 @@
 
 
 
-// AJOUT FOREIGN KEY POUR LES SORTIES
+
 static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
     int i;
     for(i = 0; i<argc; i++) {
@@ -26,6 +26,11 @@ int main() {
     printf("Je suis dedans\n");
     rc = sqlite3_open("mainP.db", &db);
     phase1(db);
+    printf("Phase 1 OK");
+    phase2(db);
+    printf("Phase 2 OK");
+    phase3(db);
+    printf("Phase 3 OK");
     sqlite3_close(db);
 
     return 0;
